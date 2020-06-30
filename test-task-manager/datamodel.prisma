@@ -1,12 +1,27 @@
-type Project {
+type User {
   id: ID! @id
   name: String!
-  tasks: [Task!]! @relation(link: INLINE)
+  email: String! @unique
+  posts: [Post!]! @relation(link: INLINE)
+  comments: [Comment!]! @relation(link: INLINE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
 }
 
-type Task {
+type Post {
   id: ID! @id
   title: String!
-  project: Project!
-  isCompleted: Boolean! 
+  body: String!
+  published: Boolean!
+  author: User!
+  comments: [Comment!]! @relation(link: INLINE)
+  createdAt: DateTime! @createdAt
+  updatedAt: DateTime! @updatedAt
+}
+
+type Comment {
+  id: ID! @id
+  text: String!
+  author: User!
+  post: Post!
 }
