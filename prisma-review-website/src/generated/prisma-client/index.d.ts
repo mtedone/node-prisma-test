@@ -439,7 +439,7 @@ export interface ReviewCreateManyWithoutBookInput {
 
 export interface ReviewCreateWithoutBookInput {
   id?: Maybe<ID_Input>;
-  text: String;
+  text?: Maybe<String>;
   rating: Int;
   author: UserCreateOneWithoutReviewsInput;
 }
@@ -591,7 +591,7 @@ export interface BookUpdateManyMutationInput {
 
 export interface ReviewCreateInput {
   id?: Maybe<ID_Input>;
-  text: String;
+  text?: Maybe<String>;
   rating: Int;
   book: BookCreateOneWithoutReviewsInput;
   author: UserCreateOneWithoutReviewsInput;
@@ -654,7 +654,7 @@ export interface ReviewCreateManyWithoutAuthorInput {
 
 export interface ReviewCreateWithoutAuthorInput {
   id?: Maybe<ID_Input>;
-  text: String;
+  text?: Maybe<String>;
   rating: Int;
   book: BookCreateOneWithoutReviewsInput;
 }
@@ -814,7 +814,7 @@ export interface BookNullablePromise
 
 export interface Review {
   id: ID_Output;
-  text: String;
+  text?: String;
   rating: Int;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;
@@ -1197,7 +1197,7 @@ export interface ReviewSubscriptionPayloadSubscription
 
 export interface ReviewPreviousValues {
   id: ID_Output;
-  text: String;
+  text?: String;
   rating: Int;
   createdAt: DateTimeOutput;
   updatedAt: DateTimeOutput;

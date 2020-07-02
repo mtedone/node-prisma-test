@@ -275,7 +275,7 @@ type Query {
 
 type Review {
   id: ID!
-  text: String!
+  text: String
   rating: Int!
   book: Book!
   author: User!
@@ -291,7 +291,7 @@ type ReviewConnection {
 
 input ReviewCreateInput {
   id: ID
-  text: String!
+  text: String
   rating: Int!
   book: BookCreateOneWithoutReviewsInput!
   author: UserCreateOneWithoutReviewsInput!
@@ -309,14 +309,14 @@ input ReviewCreateManyWithoutBookInput {
 
 input ReviewCreateWithoutAuthorInput {
   id: ID
-  text: String!
+  text: String
   rating: Int!
   book: BookCreateOneWithoutReviewsInput!
 }
 
 input ReviewCreateWithoutBookInput {
   id: ID
-  text: String!
+  text: String
   rating: Int!
   author: UserCreateOneWithoutReviewsInput!
 }
@@ -341,7 +341,7 @@ enum ReviewOrderByInput {
 
 type ReviewPreviousValues {
   id: ID!
-  text: String!
+  text: String
   rating: Int!
   createdAt: DateTime!
   updatedAt: DateTime!

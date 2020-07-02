@@ -18,7 +18,7 @@ type Book {
 
 type Review {
   id: ID! @id
-  text: String!
+  text: String
   rating: Int!
   book: Book! @relation(name: "ReviewToBook", onDelete: SET_NULL)
   author: User! @relation(name: "ReviewToUser", onDelete: SET_NULL)
