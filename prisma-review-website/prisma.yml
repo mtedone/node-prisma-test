@@ -1,0 +1,9 @@
+endpoint: http://localhost:4466/reviews/default
+datamodel: datamodel.graphql
+# databaseType: document
+
+generate:
+  - generator: javascript-client
+    output: ./src/generated/prisma-client/
+  - generator: graphql-schema
+    output: ./src/generated/schema/schema.graphql
