@@ -1,8 +1,6 @@
 version: '3'
 services:
   prisma:
-    depends_on:
-      - postgres
     image: prismagraphql/prisma:1.34
     restart: always
     ports:
@@ -14,21 +12,7 @@ services:
         # managementApiSecret: my-secret
         databases:
           graphql-udemy:
-            connector: postgres
             database: graphql-udemy
-            host: postgres
-            port: '5432'
-            user: prisma
-            password: prisma
-  postgres:
-    image: postgres:latest
-    restart: always
-    ports:
-      - '5432:5432'
-    environment:
-      POSTGRES_USER: prisma
-      POSTGRES_PASSWORD: prisma
-    volumes:
-      - postgres:/var/lib/postgresql/data
-volumes:
-  postgres:
+            connector: mongo            
+            uri: >-
+              ${DB_URL}

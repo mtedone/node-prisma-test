@@ -126,6 +126,8 @@ input CommentSubscriptionWhereInput {
   updatedFields_contains_some: [String!]
   node: CommentWhereInput
   AND: [CommentSubscriptionWhereInput!]
+  OR: [CommentSubscriptionWhereInput!]
+  NOT: [CommentSubscriptionWhereInput!]
 }
 
 input CommentUpdateInput {
@@ -235,6 +237,8 @@ input CommentWhereInput {
   author: UserWhereInput
   post: PostWhereInput
   AND: [CommentWhereInput!]
+  OR: [CommentWhereInput!]
+  NOT: [CommentWhereInput!]
 }
 
 input CommentWhereUniqueInput {
@@ -444,6 +448,8 @@ input PostSubscriptionWhereInput {
   updatedFields_contains_some: [String!]
   node: PostWhereInput
   AND: [PostSubscriptionWhereInput!]
+  OR: [PostSubscriptionWhereInput!]
+  NOT: [PostSubscriptionWhereInput!]
 }
 
 input PostUpdateInput {
@@ -566,7 +572,9 @@ input PostWhereInput {
   published: Boolean
   published_not: Boolean
   author: UserWhereInput
+  comments_every: CommentWhereInput
   comments_some: CommentWhereInput
+  comments_none: CommentWhereInput
   createdAt: DateTime
   createdAt_not: DateTime
   createdAt_in: [DateTime!]
@@ -584,6 +592,8 @@ input PostWhereInput {
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
   AND: [PostWhereInput!]
+  OR: [PostWhereInput!]
+  NOT: [PostWhereInput!]
 }
 
 input PostWhereUniqueInput {
@@ -697,6 +707,8 @@ input UserSubscriptionWhereInput {
   updatedFields_contains_some: [String!]
   node: UserWhereInput
   AND: [UserSubscriptionWhereInput!]
+  OR: [UserSubscriptionWhereInput!]
+  NOT: [UserSubscriptionWhereInput!]
 }
 
 input UserUpdateInput {
@@ -790,8 +802,12 @@ input UserWhereInput {
   email_not_starts_with: String
   email_ends_with: String
   email_not_ends_with: String
+  posts_every: PostWhereInput
   posts_some: PostWhereInput
+  posts_none: PostWhereInput
+  comments_every: CommentWhereInput
   comments_some: CommentWhereInput
+  comments_none: CommentWhereInput
   createdAt: DateTime
   createdAt_not: DateTime
   createdAt_in: [DateTime!]
@@ -809,6 +825,8 @@ input UserWhereInput {
   updatedAt_gt: DateTime
   updatedAt_gte: DateTime
   AND: [UserWhereInput!]
+  OR: [UserWhereInput!]
+  NOT: [UserWhereInput!]
 }
 
 input UserWhereUniqueInput {
