@@ -1,3 +1,5 @@
+import { prisma } from '../generated/prisma-client';
+
 const Query = {
   users(parent, args, { prisma }, info) {
     return prisma.query.users(args.query, info);
@@ -5,16 +7,8 @@ const Query = {
   posts(parent, args, { prisma }, info) {
     return prisma.query.posts(args.query, info);
   },
-  comments(parent, args, { db }, info) {
-    return db.comments;
-  },
-  post() {
-    return {
-      id: '092',
-      title: 'GraphQL 101',
-      body: '',
-      published: false,
-    };
+  comments(parent, args, { prisma }, info) {
+    return prisma.query.comments(args.query, info);
   },
 };
 
