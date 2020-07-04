@@ -1,18 +1,17 @@
-const { GraphQLServer, PubSub } = require('graphql-yoga');
+const { GraphQLServer } = require('graphql-yoga');
 import prisma from './prisma';
 import Query from './resolvers/Query';
 import Mutation from './resolvers/Mutation';
-
-const pubsub = new PubSub();
+import Subscription from './resolvers/Subscription';
 
 const server = new GraphQLServer({
   typeDefs: './src/generated/schema/schema.graphql',
   resolvers: {
     Query,
     Mutation,
+    Subscription,
   },
   context: {
-    pubsub,
     prisma,
   },
 });

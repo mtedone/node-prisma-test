@@ -1,6 +1,7 @@
 endpoint: http://localhost:4466
 datamodel: datamodel.graphql
 # databaseType: document
+secret: 'thisismysecret'
 
 generate:
   - generator: javascript-client
