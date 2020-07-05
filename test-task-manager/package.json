@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon src/index.js --ext js,graphql --exec babel-node",
+    "start": "nodemon src/index.js --ext js --exec babel-node",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -13,7 +13,10 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "dotenv": "^8.2.0",
+    "graphql": "^15.2.0",
+    "graphql-tools": "^6.0.12",
     "graphql-yoga": "^1.18.3",
+    "jsonwebtoken": "^8.5.1",
     "prisma-binding": "^2.3.16",
     "prisma-client-lib": "^1.34.10"
   },
