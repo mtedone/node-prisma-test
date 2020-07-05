@@ -1,10 +1,12 @@
 import { Prisma } from 'prisma-binding';
+import { resolvers, fragmentReplacements } from './resolvers/index';
 require('dotenv').config();
 
 const prisma = new Prisma({
   typeDefs: 'src/generated/prisma.graphql',
   endpoint: 'http://localhost:4466',
   secret: process.env.PRISMA_MANAGEMENT_API_SECRET,
+  fragmentReplacements,
 });
 
 export { prisma as default };
